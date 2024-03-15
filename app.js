@@ -14,7 +14,6 @@ if (process.env.NODE_ENV !== "PRODUCTION") {
 
 app.use(express.json());
 app.use(cookieParser());
-app.use(bodyParser.urlencoded({extended: true}));
 app.use(fileUpload());
 app.use(
   cors({
@@ -23,7 +22,7 @@ app.use(
   credentials: true,
 })
 );
-
+app.use(bodyParser.urlencoded({extended: true}));
 // Route Imports
 const product = require("./routes/productRoute");
 const user = require("./routes/userRoute");
